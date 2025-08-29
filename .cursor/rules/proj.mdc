@@ -1,0 +1,35 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+You are an expert full-stack developer. Generate a **React (web/mobile) app** for a **basic color analysis tool** using the following specifications:
+
+1. **Input**:  
+   - A single JPEG file upload (or a fixed example JPEG).  
+   - Include a button labeled "Start Analysis" that triggers the processing.
+
+2. **Processing**:  
+   - Use **OpenCV** (or OpenCV.js) with **Face Mesh** to detect the face, hair, and eyes.  
+   - Compute **undertones and overtones** of the skin using the **seasonal color analysis theory** from this guide:  
+     https://theconceptwardrobe.com/colour-analysis-comprehensive-guides/seasonal-color-analysis-which-color-season-are-you  
+   - Undertones: warm, cool, neutral.  
+   - Overtones: high-level descriptive colors reflecting visible skin hues.
+
+3. **Output / UI**:  
+   - Show the **original image**.  
+   - Display a **panel or section** showing:  
+     - Detected **undertones** (text + color swatch).  
+     - Detected **overtones** (text + color swatch or representative color box).  
+   - Keep it mobile-friendly, simple, minimal styling is fine.
+
+4. **Implementation Notes**:  
+   - Use React functional components.  
+   - Use OpenCV.js for image processing in the browser.  
+   - Provide a **clear flow**: upload → process → show results.  
+   - Ensure the code is runnable in a modern React project.  
+   - Include comments explaining where the face mesh analysis happens, where the color calculations happen, and where seasonal theory is applied.  
+
+**Goal:** A minimal but functional MVP of a seasonal color analysis tool that is ready to extend for further styling or fashion recommendations.
+
+Generate the **full React code** (JSX + component structure + minimal CSS) needed to implement this MVP.

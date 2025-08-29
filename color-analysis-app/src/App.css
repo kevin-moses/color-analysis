@@ -1,0 +1,35 @@
+/* Mobile-optimized App styles */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+/* Remove default app styling for mobile-first approach */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure smooth transitions for mobile */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+  }
+}
+
+/* Better mobile touch targets */
+button, input[type="file"] {
+  min-height: 44px; /* iOS recommended touch target */
+  min-width: 44px;
+}
+
+/* Improved mobile viewport handling */
+@viewport {
+  width: device-width;
+  initial-scale: 1.0;
+  user-scalable: no;
+}
