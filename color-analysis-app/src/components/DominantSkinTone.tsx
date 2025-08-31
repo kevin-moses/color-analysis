@@ -1,5 +1,6 @@
 import React from 'react';
-import { sharedStyles, mergeStyles, BaseComponentProps } from '../styles/shared';
+import { sharedStyles, mergeStyles } from '../styles/shared';
+import type { BaseComponentProps } from '../types/components';
 import type { ColorSwatch as MediaPipeColorSwatch } from '../utils/mediapipeDetection';
 
 interface DominantSkinToneProps extends BaseComponentProps {

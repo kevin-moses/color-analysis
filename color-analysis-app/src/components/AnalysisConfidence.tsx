@@ -1,5 +1,6 @@
 import React from 'react';
-import { sharedStyles, mergeStyles, BaseComponentProps } from '../styles/shared';
+import { sharedStyles, mergeStyles } from '../styles/shared';
+import type { BaseComponentProps } from '../types/components';
 
 interface AnalysisConfidenceProps extends BaseComponentProps {
   confidence: number;
@@ -21,11 +22,11 @@ const AnalysisConfidence: React.FC<AnalysisConfidenceProps> = ({
 
   return (
     <div className={mergeStyles(`${sharedStyles.card} bg-opacity-15 ${sharedStyles.cardCompact}`, className)}>
-      <h3 className="font-normal mb-3 text-center font-korean">✨ Analysis Confidence</h3>
+      <h3 className="font-bold mb-3 text-center">✨ Analysis Confidence</h3>
       <div className="space-y-2">
         <div className="flex items-center justify-between">
-          <span className="text-sm opacity-90 font-korean">Accuracy</span>
-          <span className="text-lg font-normal font-korean">{Math.round(confidence)}%</span>
+          <span className="text-sm opacity-90">Accuracy</span>
+          <span className="text-lg font-bold">{Math.round(confidence)}%</span>
         </div>
         <div className="w-full bg-white bg-opacity-20 rounded-full h-4 overflow-hidden">
           <div 

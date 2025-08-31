@@ -1,5 +1,6 @@
 import React from 'react';
-import { sharedStyles, mergeStyles, BaseComponentProps } from '../styles/shared';
+import { sharedStyles, mergeStyles } from '../styles/shared';
+import type { BaseComponentProps } from '../types/components';
 import UndertoneColorMap from './UndertoneColorMap';
 import type { ColorSwatch as MediaPipeColorSwatch } from '../utils/mediapipeDetection';
 
@@ -29,13 +30,13 @@ const UndertoneAnalysis: React.FC<UndertoneAnalysisProps> = ({
             className="w-6 h-6 rounded-full border-2 border-white shadow-sm mr-2"
             style={{ backgroundColor: getUndertoneColor(undertone) }}
           />
-          <h3 className="font-normal text-lg font-korean">Undertone Analysis</h3>
+          <h3 className="font-bold text-lg">Undertone Analysis</h3>
         </div>
-        <p className="capitalize text-xl font-normal font-korean">{undertone}</p>
+        <p className="capitalize text-xl font-bold">{undertone}</p>
         {dominantSkinTone?.lab && (
           <div className="mt-2 text-xs opacity-90">
-            <p className="font-normal font-korean">L*a*b* Values</p>
-            <p className="font-korean">
+            <p className="font-bold">L*a*b* Values</p>
+            <p>
               L: {dominantSkinTone.lab.l} | a: {dominantSkinTone.lab.a} | b: {dominantSkinTone.lab.b}
             </p>
           </div>

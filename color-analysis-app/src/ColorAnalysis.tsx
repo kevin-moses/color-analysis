@@ -272,52 +272,55 @@ const ColorAnalysis: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen font-korean text-white" style={{ backgroundColor: '#c7e3ff' }}>
+    <div className="min-h-screen">
+      {/* Analysis Overlay */}
+      <AnalysisOverlay isVisible={showAnalysisScreen} />
+    
+      {/* Upload Screen (only when no image selected yet) */}
+      {!hasStartedAnalysis && !selectedImage && (
+        <UploadScreen
+          onImageUpload={handleImageUpload}
+          onLoadTestImage={loadTestImage}
+        />
+      )}
+
+      {/* Processing Screen */}
+      {selectedImage && !hasStartedAnalysis && (
+    <div className="min-h-screen text-white" style={{ backgroundColor: '#c7e3ff' }}>
       <div className="safe-area-padding">
-        {/* Header */}
-        <header className={sharedStyles.header}>
-          <div className={sharedStyles.headerContent}>
-            <h1 className={sharedStyles.title}>✨ Color Analysis</h1>
-            <p className={sharedStyles.subtitle}>Discover your personal color palette</p>
-          </div>
-        </header>
 
-        <main className={sharedStyles.container}>
-          {/* Analysis Overlay */}
-          <AnalysisOverlay isVisible={showAnalysisScreen} />
+
+            <main className={sharedStyles.container}>
+              <ProcessingScreen
+                selectedImage={selectedImage}
+                isAnalyzing={isAnalyzing}
+                onAnalyzeColors={analyzeColors}
+                imageRef={imageRef as React.RefObject<HTMLImageElement>}
+                overlayRef={overlayRef as React.RefObject<HTMLCanvasElement>}
+              />
+            </main>
+              </div>
+            </div>
+          )}
         
-          {/* Upload Screen */}
-          {!hasStartedAnalysis && (
-            <UploadScreen
-              onImageUpload={handleImageUpload}
-              onLoadTestImage={loadTestImage}
-            />
-          )}
+      {/* Results Screen */}
+      {results && selectedImage && (
+        <div className="min-h-screen text-white" style={{ backgroundColor: '#c7e3ff' }}>
+          <div className="safe-area-padding">
 
-          {/* Processing Screen */}
-          {selectedImage && !hasStartedAnalysis && (
-            <ProcessingScreen
-              selectedImage={selectedImage}
-              isAnalyzing={isAnalyzing}
-              onAnalyzeColors={analyzeColors}
-              imageRef={imageRef as React.RefObject<HTMLImageElement>}
-              overlayRef={overlayRef as React.RefObject<HTMLCanvasElement>}
-            />
-          )}
-
-          {/* Results Screen */}
-          {results && selectedImage && (
-            <ResultsScreen
-              results={results}
+            <main className={sharedStyles.container}>
+              <ResultsScreen
+                results={results}
                           selectedImage={selectedImage}
                           landmarks={landmarks}
                         />
-          )}
+            </main>
+                      </div>
+                    </div>
+      )}
 
-          {/* Hidden canvas for image processing */}
-          <canvas ref={canvasRef} className="hidden" />
-        </main>
-      </div>
+      {/* Hidden canvas for image processing */}
+      <canvas ref={canvasRef} className="hidden" />
     </div>
   );
 };

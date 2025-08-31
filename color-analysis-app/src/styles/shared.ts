@@ -11,15 +11,15 @@ export const sharedStyles = {
   sectionContent: "space-y-6",
   
   // Button styles
-  buttonPrimary: "w-full bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 disabled:from-pink-400 disabled:to-purple-400 disabled:cursor-not-allowed text-white font-normal py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg border border-white border-opacity-20 font-korean",
-  buttonSecondary: "w-full bg-white bg-opacity-25 hover:bg-opacity-35 active:bg-opacity-40 text-white font-normal py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] shadow-md border border-white border-opacity-30 font-korean",
-  buttonTertiary: "w-full bg-white bg-opacity-20 hover:bg-opacity-30 active:bg-opacity-35 text-white font-normal py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] shadow-md border border-white border-opacity-20 font-korean",
+  buttonPrimary: "w-full bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 disabled:from-pink-400 disabled:to-purple-400 disabled:cursor-not-allowed text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg border border-white border-opacity-20",
+  buttonSecondary: "w-full bg-white bg-opacity-25 hover:bg-opacity-35 active:bg-opacity-40 text-white font-bold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] shadow-md border border-white border-opacity-30",
+  buttonTertiary: "w-full bg-white bg-opacity-20 hover:bg-opacity-30 active:bg-opacity-35 text-white font-bold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] shadow-md border border-white border-opacity-20",
   
   // Text styles
-  title: "text-2xl sm:text-3xl font-normal text-center tracking-wide font-korean",
-  subtitle: "text-center text-sm opacity-90 mt-1 font-korean",
-  sectionTitle: "text-lg font-normal mb-4 text-center text-white font-korean",
-  sectionTitleCompact: "text-base font-normal mb-4 flex items-center gap-2 font-korean",
+  title: "text-2xl sm:text-3xl font-bold text-center tracking-wide",
+  subtitle: "text-center text-sm opacity-90 mt-1",
+  sectionTitle: "text-lg font-bold mb-4 text-center text-white",
+  sectionTitleCompact: "text-base font-bold mb-4 flex items-center gap-2",
   
   // Layout styles
   container: "max-w-md mx-auto px-4",

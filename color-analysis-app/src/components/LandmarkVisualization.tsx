@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
-import { sharedStyles, mergeStyles, BaseComponentProps } from '../styles/shared';
+import { sharedStyles, mergeStyles } from '../styles/shared';
+import type { BaseComponentProps } from '../types/components';
 import { drawColorCodedLandmarksOverlay } from '../utils/mediapipeDetection';
 
 interface LandmarkVisualizationProps extends BaseComponentProps {
@@ -42,7 +43,7 @@ const LandmarkVisualization: React.FC<LandmarkVisualizationProps> = ({
 
   return (
     <div className={mergeStyles(`${sharedStyles.card} bg-opacity-15 ${sharedStyles.cardCompact}`, className)}>
-      <h3 className="font-normal text-center mb-4 font-korean">🎯 Analysis Landmarks</h3>
+      <h3 className="font-bold text-center mb-4">🎯 Analysis Landmarks</h3>
       <div className="relative rounded-lg overflow-hidden border border-white border-opacity-20">
         <img
           ref={imgRef}
@@ -61,15 +62,15 @@ const LandmarkVisualization: React.FC<LandmarkVisualizationProps> = ({
         <div className="grid grid-cols-1 gap-2">
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-red-500 border border-white"></div>
-            <span className="font-korean">Primary analysis points (cheeks, nose, chin)</span>
+            <span>Primary analysis points (cheeks, nose, chin)</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-white opacity-60"></div>
-            <span className="font-korean">Other skin regions</span>
+            <span>Other skin regions</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-full bg-cyan-400 border border-white"></div>
-            <span className="font-korean">Excluded areas (eyebrows, hairline)</span>
+            <span>Excluded areas (eyebrows, hairline)</span>
           </div>
         </div>
       </div>
